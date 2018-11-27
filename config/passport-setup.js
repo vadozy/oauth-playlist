@@ -1,7 +1,8 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./keys');
 const User = require('../models/user-model');
+// https://console.developers.google.com/apis/credentials?project=vadim-oauth-test
+const keys = require('./mykeys');
 
 passport.use(
     new GoogleStrategy({
@@ -19,5 +20,6 @@ passport.use(
         }).save().then((newUser) => {
             console.log('new user created: ', newUser);
         });
+        // setTimeout(() => {return done(null, {username: "Vadim S."})}, 100);
     })
 );

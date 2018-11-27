@@ -1,6 +1,8 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./keys');
+
+// https://console.developers.google.com/apis/credentials?project=vadim-oauth-test
+const keys = require('./mykeys');
 
 passport.use(
     new GoogleStrategy({

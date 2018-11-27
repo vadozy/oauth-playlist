@@ -1,6 +1,8 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./keys');
+
+// https://console.developers.google.com/apis/credentials?project=vadim-oauth-test
+const keys = require('./mykeys');
 
 passport.use(
     new GoogleStrategy({
@@ -12,5 +14,6 @@ passport.use(
         // passport callback function
         console.log('passport callback function fired:');
         console.log(profile);
+        // setTimeout(() => {return done(null, {username: "Vadim S."})}, 100);
     })
 );

@@ -2,9 +2,9 @@ const express = require('express');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth-routes');
-const passportSetup = require('./config/passport-setup');
+require('./config/passport-setup');
 const mongoose = require('mongoose');
-const keys = require('./config/keys');
+const keys = require('./config/mykeys');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(passport.session());
 
 
 // connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
+mongoose.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, () => {
     console.log('connected to mongodb');
 });
 

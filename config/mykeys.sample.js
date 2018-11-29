@@ -10,6 +10,6 @@ module.exports = {
     dbURI: 'mongodb://localhost:27017/oauth-test'
   },
   session: {
-    cookieKey: 'thenetninjaisawesomeiguess'
+    cookieKey: 'my super secret key'
   }
 };
